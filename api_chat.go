@@ -225,7 +225,7 @@ func (bot Bot) RemoveChatMember(chatID string, idList []string) (*RemoveChatMemb
 	req := RemoveChatMemberRequest{
 		IDList: idList,
 	}
-	err := bot.PostAPIRequest(
+	err := bot.DeleteAPIRequest(
 		"RemoveChatMember",
 		fmt.Sprintf(removeChatMemberURL, chatID, bot.userIDType),
 		true, req, &respData)
